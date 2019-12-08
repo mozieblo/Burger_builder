@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Aux from '../../../hoc/Aux/Aux';
+import Aux from '../../../hoc/Auxchange/Auxchange';
 import Button from '../../UI/Button/Button';
 const oredrSummary = ( props ) => {
     let ingredientsSummary = Object.keys(props.ingredients).map((igKey) => {
