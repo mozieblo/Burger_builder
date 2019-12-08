@@ -121,11 +121,11 @@ class BurgerBuilder extends Component {
 
             axios.post('orders.json', order)
                 .then(response => {
-                    console.log(response);
+                    //console.log(response);
                     this.setState({ loading: false, purchaising: false })
                 })
                 .catch(error => {
-                    console.log(error);
+                    //console.log(error);
                     this.setState({ loading: false, purchaising: false })
                 });
     }
@@ -142,7 +142,7 @@ class BurgerBuilder extends Component {
         let orderSummary = null
         
         let burger = this.state.error ? <p>Ingredient's can't be loaded!</p> : <Spinner />;
-
+        
         if (this.state.ingredients) {
             burger = (
                 <Aux>

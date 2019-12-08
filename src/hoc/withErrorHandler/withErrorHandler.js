@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Aux from '../Aux/Aux';
 import Modal from '../../components/UI/Modal/Modal';
-
+ 
 const withErrorHandler = (WrappedComponent, axios) => {
     return class extends Component {
         state = {
@@ -25,7 +25,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
             axios.interceptors.response.eject(this.resInterceptor);
         }
 
-        errorConfirmHandler = () =>{
+        errorConfirmHandler = () => {
             this.setState({ error: null });
         }
 
