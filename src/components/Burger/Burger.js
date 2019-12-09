@@ -1,9 +1,11 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import BurgerIngredient from '../Burger/BurgerIngredient/BurgerIngredient';
 import classes from './Burger.module.css';
 
 const burger = ( props ) => {
+    console.log(props)
     // Object.keys zamienia object na array z samymi keys w stringach ['salad','bacon','meat','cheese']
     // mapujemy po tej array i zwracamy array z tylom miejscami co ilosc skladnikow [ [ undefined ], [ undefined ], 
     // [ undefined, undefined ], [ undefined, undefined] ]
@@ -31,4 +33,4 @@ const burger = ( props ) => {
     );
 }
 
-export default burger;
+export default withRouter(burger);
