@@ -105,11 +105,11 @@ const mapStateToProps = state => {
     }
 }
 
-const mapDispatchToPtops = dispatch => {
+const mapDispatchToProps = dispatch => {
     return {
         onIngredientAdded: (ingName) => dispatch({ type: actionTypes.ADD_INGREDIENT, ingredientName: ingName }),
         onIngredientRemove: (ingName) => dispatch({ type: actionTypes.REMOVE_INGREDIENT, ingredientName: ingName })
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToPtops)(withErrorHandler(BurgerBuilder, axios));
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(BurgerBuilder, axios));
