@@ -8,6 +8,7 @@ import axios from '../../../axios-order';
 import Input from '../../../components/UI/Input/Input';
 import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
 import * as actions from '../../../store/actions/index';
+import uniqid from 'uniqid';
 
 class ContactData extends Component {
     state = {
@@ -151,15 +152,16 @@ class ContactData extends Component {
             <form onSubmit={this.orderHandler}>
                 {formElementsArray.map(formEl => {
                     return ( 
-                        <Input 
-                            key={formEl.id} 
-                            elementType={formEl.config.elementType} 
-                            elementConfig={formEl.config.elementConfig} 
-                            value={formEl.config.value}
-                            invalid={!formEl.config.valid}
-                            shouldValidate={formEl.config.validation}
-                            touched={formEl.config.touched}
-                            changed={(event) => {this.inputChangedHandler(event, formEl.id)}} />
+                        <div  key={uniqid()} >
+                            <Input 
+                                elementType={formEl.config.elementType} 
+                                elementConfig={formEl.config.elementConfig} 
+                                value={formEl.config.value}
+                                invalid={!formEl.config.valid}
+                                shouldValidate={formEl.config.validation}
+                                touched={formEl.config.touched}
+                                changed={(event) => {this.inputChangedHandler(event, formEl.id)}} />
+                        </div>
                     );
                 })}
                 <Button btnType="Success">ORDER</Button>
